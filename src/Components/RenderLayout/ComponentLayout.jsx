@@ -59,7 +59,7 @@ const ComponentLayout = (props) => {
                         <React.Fragment key={option.id}>
                           <div className="col-md-6">
                             <input
-                              className="form-control"
+                              className="form-control mb-3"
                               style={{ width: "50%" }}
                               placeholder="Enter option value"
                               type={option.type}

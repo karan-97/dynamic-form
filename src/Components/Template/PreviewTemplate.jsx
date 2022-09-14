@@ -39,7 +39,7 @@ const PreviewTemplate = (props) => {
                   {component.type === "select" ? (
                     <select
                       required={component.isRequired}
-                      className="form-select"
+                      className="form-select mb-3"
                       key={component.id}
                       name={component.name}
                     >
