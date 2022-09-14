@@ -7,6 +7,7 @@ const TemplateListing = () => {
       <div className="container" style={{marginTop: "10%"}}>
         <ul className="list-group">
           {
+            components && components.length > 0 ?
             components.map((component, index) => {
               return <>
                   <li class="list-group-item" key={index} style={{listStyle: "none"}}>
@@ -14,7 +15,7 @@ const TemplateListing = () => {
                   </li>
                   </>
                 
-            })
+            }) : ""
           }
         </ul>
       </div>
