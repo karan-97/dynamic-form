@@ -14,7 +14,6 @@ const ComponentLayout = (props) => {
             <div key={component.id} >
               <div className="card" style={{ width: "100%", margin: "5%" }}>
                 <div className="card-body">
-                  <h5 className="card-title"></h5>
                   <input
                     type={"text"}
                     placeholder="Enter Label Name"
@@ -28,6 +27,7 @@ const ComponentLayout = (props) => {
 
                   <div className="row" style={{align: "center"}}>
                       <div className="col-md-4">
+                        <label className="form-label">Required</label>
                         <input 
                             className="form-check-input"
                             type={"checkbox"}

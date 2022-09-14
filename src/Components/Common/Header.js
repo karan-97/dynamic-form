@@ -9,7 +9,7 @@ const Header = (props) => {
     <>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand">{pathname === '/create' ? "Create Template" : "Template List"}</a>
+          <a href="#" className="navbar-brand">{pathname === '/create' ? "Create Template" : "Template List"}</a>
           <form className="d-flex">
             {
               pathname === '/'

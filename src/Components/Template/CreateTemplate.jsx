@@ -9,21 +9,17 @@ import { useNavigate } from "react-router-dom";
 const CreateTemplate = () => {
   const [templateName, setTemplateName] = useState("");
   const [components, setComponents] = useState([]);
-  const [open, setOpen] = React.useState(false);
   const [show, setShow] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("component s", components);
   }, [components]);
-
-  const toggleModal = () => {
-    setOpen((open) => !open);
-  };
 
   const changeTemplateName = (e) => {
     setTemplateName(e.target.value);
-  }
+  };
 
   const addComponent = () => {
     let select = { ...elements.select, id: uuid() };
@@ -40,10 +36,11 @@ const CreateTemplate = () => {
       return component;
     });
     setComponents(updateComponents);
-  }
+  };
 
   const removeComponent = (id) => {
     let allComponents = [...components];
+    console.log("allcomp ", allComponents);
     allComponents.splice(id, 1);
     setComponents(allComponents);
   };
@@ -95,15 +92,15 @@ const CreateTemplate = () => {
 
   const submit = () => {
     setShowAlert(true);
-    const allComponents = JSON.parse(localStorage.getItem('components'));
-    if(allComponents){
+    const allComponents = JSON.parse(localStorage.getItem("components"));
+    if (allComponents) {
       let data = [...components];
-      let updateComponents = {"templateName": templateName, data}
-      allComponents.push(updateComponents)
+      let updateComponents = { templateName: templateName, data };
+      allComponents.push(updateComponents);
       localStorage.setItem("components", JSON.stringify(allComponents));
-    }else{
+    } else {
       let data = [...components];
-      let updateComponents = [{"templateName": templateName, data}]
+      let updateComponents = [{ templateName: templateName, data }];
       localStorage.setItem("components", JSON.stringify(updateComponents));
     }
     setTimeout(() => {
@@ -178,10 +175,13 @@ const CreateTemplate = () => {
       ) : (
         ""
       )}
-      {open && <PreviewTemplate />}
       {showAlert ? (
-        <div class="alert alert-success" role="alert">
-          {"Template Saved Successfully."}
+        <div className="position-relative">
+          <div class="position-absolute top-0 start-0">
+            <div class="alert alert-success" role="alert">
+              {"Template Saved Successfully."}
+            </div>
+          </div>
         </div>
       ) : (
         ""
