@@ -4,9 +4,7 @@ import {
   useLocation
 } from "react-router-dom";
 const Header = (props) => {
-  console.log("site log", props);
   const { pathname } = useLocation();
-  console.log("path ", pathname)
   return (
     <>
       <nav className="navbar navbar-dark bg-dark">

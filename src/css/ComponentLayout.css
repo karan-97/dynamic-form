@@ -1,0 +1,7 @@
+.scrollLayout{
+    position: relative;
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* margin-bottom: 100px; */
+}

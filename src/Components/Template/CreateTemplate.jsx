@@ -15,7 +15,6 @@ const CreateTemplate = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // localStorage.setItem("components", JSON.stringify(components));
   }, [components]);
 
   const toggleModal = () => {
@@ -85,17 +84,14 @@ const CreateTemplate = () => {
   const submit = () => {
     setShowAlert(true);
     const allComponents = JSON.parse(localStorage.getItem('components'));
-    // console.log("all comp ", allComponents.length)
     if(allComponents){
       let data = [...components];
       let updateComponents = {"templateName": templateName, data}
       allComponents.push(updateComponents)
-      console.log(allComponents)
       localStorage.setItem("components", JSON.stringify(allComponents));
     }else{
       let data = [...components];
       let updateComponents = [{"templateName": templateName, data}]
-      // let updatedComponents = {...components, templateName: templateName} 
       localStorage.setItem("components", JSON.stringify(updateComponents));
     }
     setTimeout(() => {
@@ -123,7 +119,7 @@ const CreateTemplate = () => {
 
   return (
     <>
-      <ToolBox addComponent={() => addComponent()} />
+      <ToolBox addComponent={addComponent} />
       <div className="container">
         <div className="input-group mb-3">
           <div className="input-group-prepend">
