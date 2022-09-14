@@ -30,6 +30,18 @@ const CreateTemplate = () => {
     setComponents((prevComp) => [...prevComp, select]);
   };
 
+  const changeIsRequired = (componentId, checked) => {
+    let comps = [...components];
+    const updateComponents = comps.map((component) => {
+      if (component.id === componentId) {
+        component.isRequired = checked;
+        return component;
+      }
+      return component;
+    });
+    setComponents(updateComponents);
+  }
+
   const removeComponent = (id) => {
     let allComponents = [...components];
     allComponents.splice(id, 1);
@@ -137,6 +149,7 @@ const CreateTemplate = () => {
         </div>
         <div className="container">
           <ComponentLayout
+            changeIsRequired={changeIsRequired}
             changeComponentLabel={changeComponentLabel}
             removeOptions={removeOptions}
             changeOptionValue={changeOptionValue}

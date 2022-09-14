@@ -26,6 +26,20 @@ const ComponentLayout = (props) => {
                     }
                   />
 
+                  <div className="row" style={{align: "center"}}>
+                      <div className="col-md-4">
+                        <input 
+                            className="form-check-input"
+                            type={"checkbox"}
+                            onChange={(e) =>
+                              props.changeIsRequired(
+                                component.id,
+                                e.target.checked
+                              )
+                            }/> 
+                      </div>
+                  </div>
+
                   <div className="row mt-3">
                     <div className="col-md-8">DropDown Options</div>
                     <div className="col-md-4">
@@ -38,6 +52,7 @@ const ComponentLayout = (props) => {
                       </button>
                     </div>
                   </div>
+
                   <div className="row mt-2">
                     {component?.options?.map((option) => {
                       return (
