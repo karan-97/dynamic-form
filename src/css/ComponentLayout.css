@@ -1,7 +1,13 @@
 .scrollLayout{
     position: relative;
-    height: 600px;
+    height: 300px;
     overflow: scroll;
     overflow-x: hidden;
     /* margin-bottom: 100px; */
 }
+
+.required::after {
+    content: "*";
+    color: red;
+    margin-left:2px
+  }

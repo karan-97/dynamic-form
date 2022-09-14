@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import "../../css/Modal.css";
+import '../../css/ComponentLayout.css'
+
 
 const PreviewTemplate = (props) => {
   const closeOnEscapeKeyDown = (e) => {
@@ -33,9 +35,10 @@ const PreviewTemplate = (props) => {
             {components.map((component, index) => {
               return (
                 <React.Fragment key={index}>
-                <label className="form-label">{component.label}</label>
-                  {component.type == "select" ? (
+                <label className={component.isRequired ? "form-label required" : "form-label"}>{component.label}</label>
+                  {component.type === "select" ? (
                     <select
+                      required={component.isRequired}
                       className="form-select"
                       key={component.id}
                       name={component.name}
