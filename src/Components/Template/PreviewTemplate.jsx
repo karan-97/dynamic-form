@@ -56,7 +56,7 @@ const PreviewTemplate = (props) => {
             })}
           </div>
           <div className="modal-footer">
-            <button onClick={props.onClose} className="button">
+            <button className="btn btn-danger" onClick={props.onClose}>
               Close
             </button>
           </div>

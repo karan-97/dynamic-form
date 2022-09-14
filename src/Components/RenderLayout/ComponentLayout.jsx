@@ -29,7 +29,7 @@ const ComponentLayout = (props) => {
                   <div className="row mt-3">
                     <div className="col-md-8">DropDown Options</div>
                     <div className="col-md-4">
-                      <button
+                      <button className="btn btn-primary"
                         onClick={() => {
                           props.addOptions(component.id);
                         }}
@@ -46,6 +46,7 @@ const ComponentLayout = (props) => {
                             <input
                               className="form-control"
                               style={{ width: "50%" }}
+                              placeholder="Enter option value"
                               type={option.type}
                               label={option.label}
                               value={option.value}
@@ -60,6 +61,7 @@ const ComponentLayout = (props) => {
                           </div>
                           <div className="col-md-4">
                             <button
+                              className="btn btn-danger"
                               onClick={() => {
                                 props.removeOptions(component.id, option.id);
                               }}
@@ -74,6 +76,7 @@ const ComponentLayout = (props) => {
                     })}
                   </div>
                   <button
+                    className="btn btn-danger"
                     onClick={() => {
                       props.remove(component.id);
                     }}
